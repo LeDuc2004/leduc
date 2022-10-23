@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnimeHay.vn</title>
+    <link rel="stylesheet" href="stylepage2.css" />
+    <!-- CSS only -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      *{
+    margin: 0 0;
+}
+#header{  
+  
+    display: flex; 
+    width: 100%;
+    height: 65px;
+    border-top: 1px solid #ccc
+
+}
+#spanheader span{
+    cursor:pointer;
+    padding: 7px 10px;
+    margin: 3px;
+    font-size: 20px;
+    display: inline-flex;
+    background-color: #000;
+    border: 1px solid #404040
+  
+}
+#kinhnup{
+    font-size: 20px;
+    position:relative;
+    top: 18px;
+    right: 55px;
+    cursor: pointer;
+    
+
+}
+
+  #footer{
+    position: relative;
+    text-align: center;
+  
+    display:flex;
+    justify-content:space-between;
+    padding-bottom:10px;
+    padding-top: 20px;
+  }
+  #footer a {
+    text-decoration: none;
+    color: white;
+  }
+  #footer ul li{
+    list-style: none;
+    font-size: .8rem;
+  }
+  #followUs ul li i{
+      font-size: 20px;
+  }
+  #followUs ul li i:hover{
+    color: tomato;
+  }
+  #nameMovie{
+    padding-top: 5px;
+    padding-bottom: 1px;
+    background: #3a3a3a;
+    
+    text-align: center;
+    border-top: 2px solid #000;
+  }
+  
+
+
+body {
+    font-size: 14px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    color: #ccc;
+    line-height: normal;
+}
+.head-ah-frame-bg{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background: #191919;
+    border-radius: 0!important;
+}
+.first{
+    width: 20%;
+    padding: 5px;
+    background: #000;
+    margin: 10px;
+}
+.first img{
+    width: 100%;
+    display: block;
+}
+#listInfor a{
+    text-decoration: none;
+    background: #313131;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 2px;
+    display: inline-flex;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+.ok{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    </style>
+  </head>
+  <div id="ifDontLogin" style="display:none ;" >
+      <h1 >VUI LÒNG ĐĂNG NHẬP ĐỂ XEM !!!</h1>
+  </div>
+  
+  <body style="background-color: #2d2d2d; height: 100%;width:86%;text-align: center;margin: 0 auto;">
+    
+    <div id="divMid">
+      <div id="header">
+        <div class="logo">
+          <a href="wed.html">
+            <img
+              style="width: 200px; padding: 10px 10px"
+              src="https://animehay.club/themes/img/logo.png"
+              alt="logo animehay"
+            />
+          </a>
+        </div>
+        <input
+          style="
+            margin: 12px 30px;
+            width: 50%;
+            height: 33px;
+            background-color: #000;
+            border-style: none;
+            color: white;
+            border: 1px solid #404040;
+            outline: none;
+            box-sizing: border-box;
+            padding-left: 20px;
+          "
+          type="text"
+          placeholder="Nhập từ khóa... "
+        /><i id="kinhnup" class="fa-solid fa-magnifying-glass"></i>
+        <div
+          id="spanheader"
+          style="display: inline-flex; height: 45px; padding-top: 7px"
+        >
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Thể Loại"
+            ><span><i class="fa-solid fa-bars"></i></span
+          ></a>
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Lịch sử xem"
+            ><span><i class="fa-solid fa-clock-rotate-left"></i></span
+          ></a>
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Phim yêu thích"
+            ><span ><i class="fa-regular fa-bookmark"></i></span
+          ></a>
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Log in"
+            ><span onclick="Login()"
+              ><i
+                onclick="Login()"
+                class="fa-solid fa-arrow-right-to-bracket"
+              ></i></span
+          ></a>
+          <a
+            id="nameUser"
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-original-title="user"
+            ><span onclick="Login1()"
+              ><i onclick="Login1()" class="fa-regular fa-user"></i></span
+          ></a>
+        </div>
+      </div>
+      <hr />
+      <div id="bodyContent" style="color:white ;background-color: #000;">
+        <div id="nameMovie" ><h4>Naruto Mồ Côi</h4></div>
+
+
+
+        <div class="head-ah-frame-bg" >
+            <!-- 1 ------------------------------------------------------------------------------>
+            <div class="first">
+            <img src="./image/na9.jpg" alt="Vạn Giới Thần Chủ">
+            </div>
+            <div id="listInfor" style="width:80%">
+                <div class="ok" style="display:flex ; border-bottom: 1px solid white;width: 100%;    border-bottom: 1px solid #2f2f2f;
+                border-top: 1px solid #000;">
+                    <div style="margin:auto 100px ;margin-left:0">Thể Loại</div><div>
+                        <a href="/the-loai/cn-animation-34.html">
+                        CN Animation </a>
+                        <a href="/the-loai/tien-hiep-35.html">
+                        Tiên hiệp </a>
+                        <a href="/the-loai/xuyen-khong-37.html">
+                        Xuyên không </a>
+                        <a href="/the-loai/huyen-ao-39.html">
+                        Huyền ảo </a>
+                        </div>
+                </div>
+                
+                <div class="ok" style="display:flex ; border-bottom: 1px solid white;width: 100%;    border-bottom: 1px solid #2f2f2f;
+                border-top: 1px solid #000;">
+                    <div style="margin:auto 250px ;margin-left:0">Trang Thái</div><div>Đang Tiến Hành</div>
+                </div>
+                <div class="ok" style="display:flex ; border-bottom: 1px solid white;width: 100%;    border-bottom: 1px solid #2f2f2f;
+                border-top: 1px solid #000;">
+                    <div style="margin:auto 285px ;margin-left:0">Điểm</div><div>7.8 || 597 đánh giá</div>
+                </div>
+                <div class="ok" style="display:flex ; border-bottom: 1px solid white;width: 100%;    border-bottom: 1px solid #2f2f2f;
+                border-top: 1px solid #000;">
+                    <div style="margin:auto 250px ;margin-left:0">Phát Hành</div><div>2019</div>
+                </div>
+                <div class="ok" style="display:flex ; border-bottom: 1px solid white;width: 100%;    border-bottom: 1px solid #2f2f2f;
+                border-top: 1px solid #000;">
+                    <div style="margin:auto 243px ;margin-left:0">Thời Lượng</div><div>316 Tập</div>
+                </div>
+                
+
+            </div>
+            
+            </div>
+
+            <div id="watch" style="background-color: #404040;">
+                <span  ><i style="font-size: 35px;padding: 5px 15px;background-color: #4d857d;border-radius: 5px;" class="fa-regular fa-circle-play"></i></span>
+                <span onclick="page40()" ><i   style="font-size: 35px;padding: 5px 18px;background-color: #5e9c69;border-radius: 5px;" class="fa-regular fa-bookmark"></i></span>
+            </div>
+    <!-- l --------------------------------------------------------------------------------------------------->
+    
+
+    </div>
+
+
+
+
+
+      <div id="footer" >
+        <div id="takeCare">
+          <h6 style="color: white;">CHĂM SÓC KHÁNH HÀNG</h6>
+          <ul style="padding-left:0 ;">
+          <li><a href="">Trung tâm trợi giúp</li>
+          <li><a href="">Thanh toán</a></li>
+          <li><a href="">Tuyển nhân viên nữ</a></li>
+          <li><a href="">Chăm sóc khánh hàng</a></li>
+          <li><a href="">Chính sánh bảo mật</a></li>
+
+        </ul></div>
+        <div id="aboutWed">
+          <h6 style="color: white;">THÔNG TIN VÊ WED</h6>
+          <ul style="padding-left:0 ;">
+          <li><a href="">Công ty một thành viên</li>
+          <li><a href="">Founder: Lê Đức</a></li>
+          <li><a href="">CEO: Lê Đức</a></li>
+          <li><a href="">Manager: Lê Đức</a></li>
+          <li><a href="">Staff: Lê Đức</a></li>
+          </ul>
+        </div>
+        <div id="followUs">
+          <h6 style="color: white;">THEO DÕ CHÚNG TÔI TRÊN</h6>
+          <ul>
+            <li><i style="color:#3f71e7 ;" class="fa-brands fa-square-facebook"></i> <a href=""> Lê Văn Đức</a> </li>
+            <li><i style="color:#dc6100" class="fa-brands fa-square-instagram"></i><a href=""> Lê Văn Đức</a></li>
+            <li><i class="fa-brands fa-linkedin"></i><a href=""> Lê Văn Đức</a></li>
+          </ul>
+        </div>
+        <div id="appMobile">
+          <h6 style="color: white;" >TẢI APP AnimeHay NGAY THÔI</h6>
+          <img src="./image/qr.png" alt="">
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    
+<script>
+let information = [];
+
+function page40() {
+
+
+  if (1===1) {
+    
+    let obj = {
+ ///////////////////////////////////////1////////////////////////////////////////////////////////////
+      image:"./image/na9.jpg",
+      name: "Naruto Mồ Côi" 
+    };
+    let getInformation = localStorage.getItem("userChoice");
+    console.log(obj);
+    let flag = false
+    if (getInformation == null) {
+      information.push(obj); // if = [username:username;]
+      localStorage.setItem("userChoice", JSON.stringify(information));
+     
+    } else {
+      let getInformation = localStorage.getItem("userChoice");
+      getInformation = JSON.parse(getInformation);
+
+      
+      
+      for (let i = 0; i < getInformation.length; i++) {
+        if (obj.name == getInformation[i].name) {
+          
+          
+
+          return
+        } else{
+          flag=true
+          continue
+        }
+        
+        
+       } console.log(flag); if(flag==true){
+          getInformation.push(obj); // {[username....;email....;password....,]}
+        localStorage.setItem("userChoice", JSON.stringify(getInformation));
+        }
+  }
+}
+}
+
+</script>

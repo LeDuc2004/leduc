@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnimeHay.vn</title>
+    <link rel="stylesheet" href="stylewed.css" />
+    <!-- CSS only -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <div id="ifDontLogin" style="display:none ;" >
+      <h1 >BẠN CHƯA ĐĂNG NHẬP !!!</h1>
+  </div>
+  <script src="./hotro.js"></script>
+  
+  <body style="background-color: #2d2d2d; height: 100%px">
+    <script>
+      
+    </script>
+    <span id="comeHead" onclick="comeHead()"><i onclick="comeHead()" class="fa-solid fa-circle-up"></i></span>
+    <span id="comeHead1" onclick="comeHead()"><i onclick="comeHead()" class="fa-solid fa-circle-up"></i></span>
+    <div id="divMid">
+      <div id="header">
+        <div class="logo">
+          <a href="wed.html">
+            <img
+              style="width: 200px; padding: 10px 10px"
+              src="https://animehay.club/themes/img/logo.png"
+              alt="logo animehay"
+            />
+          </a>
+        </div>
+        <input id="inputSearch" oninput="search()"
+          style="
+            margin: 12px 30px;
+            width: 50%;
+            height: 33px;
+            background-color: #000;
+            border-style: none;
+            color: white;
+            border: 1px solid #404040;
+            outline: none;
+            box-sizing: border-box;
+            padding-left: 20px;
+          "
+          type="text"
+          placeholder="Nhập từ khóa... "
+        /><i id="kinhnup" class="fa-solid fa-magnifying-glass"></i>
+        <div
+          id="spanheader"
+          style="display: inline-flex; height: 45px; padding-top: 7px"
+        >
+        <span  id="menu" style="display: none ;" >
+          <div >
+            <h4 style="background-color:#9c3737;text-align: center;">Thể Loại</h4>
+            <ul data-tooltip="okcc">
+             <li onclick="li1()">Anime</li>
+             <li onclick="li2()">Bí ẩn</li>
+             <li>Võ thuật</li>
+             <li>Shounen</li>
+             <li>Âm nhạc</li>
+             <li>Seinen</li>
+             
+            </ul>
+           </div>
+          
+        </span>
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            
+            > <span id="listMenu" style="display: inline-block;" onclick="theLoai()"><i  onclick="theLoai()" class="fa-solid fa-bars"></i></span>
+              <span id="listMenu1" style="display: none;margin: 0px;"  onclick="theLoai1()" ><i   style="color:#9c3737 ;"  onclick="theLoai1()" class="fa-regular fa-circle-xmark"></i></span>
+        </a>
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Phim yêu thích"
+            ><span onclick="phimyeuthich()" style="display: inline-block;"><i onclick="phimyeuthich()" class="fa-regular fa-bookmark"></i></span
+          ></a>
+          <a
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Đăng nhập"
+            ><span style="display: inline-block;" onclick="login()" ><i onclick="login()" class="fa-solid fa-arrow-right-to-bracket" ></i></span
+          ></a>
+          <a id="nameUser"
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-original-title="Bạn chưa đăng nhập"
+            ><span style="display: inline-block;" onclick="Login1()"><i onclick="Login1()" class="fa-regular fa-user"></i></span
+              ></a>
+          <a
+            
+            style="text-decoration: none"
+            href="#"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Đăng xuất"
+            ><span style="display: inline-block;" onclick="Logout()"
+              ><i onclick="Logout()" class="fa-solid fa-arrow-right-from-bracket"></i></span
+          ></a>
+        </div>
+      </div>
+  
+      <div style="display:block ;" id="phimhot" class="margin-10-0 bg-gray-2">
+        <div class="fs-17 fw-700 padding-0-20 color-gray inline-flex height-40 flex-hozi-center bg-black border-l-t">
+      Phim đang hot
+        </div>
+        </div>
+        <hr>
+                                               <!-- lớp giả từ đây -->
+      <div id="bodyFake" style="display: block ;">
+
+      <div
+        id="carouselExampleInterval"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        style="display:block ;"
+      >
+      
+        <div class="carousel-inner" >
+          <div class="carousel-item" data-bs-interval="2500">
+            <img
+             onclick= "onePiece()"
+              style="height: 400px; width: 100%"
+              src="./image/hvah5.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2500">
+            <img onclick= "dragon()"
+              style="height: 400px; width: 100%"
+              src="./image/slide4.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2500">
+            <img onclick= "naruto()"
+              style="height: 400px; width: 100%"
+              src="./image/naruto1.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carousel-item active" data-bs-interval="2500">
+            <img onclick= "onePiece()"
+              style="height: 400px; width: 100%"
+              src="./image2/bua3.jpg"
+              alt=""
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="2500">
+            <img onclick= "hocVien()"
+              style="height: 400px; width: 100%"
+              src="./image/slide7.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"
+            ><font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">Trước</font></font
+            ></span
+          >
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"
+            ><font style="vertical-align: inherit"
+              ><font style="vertical-align: inherit">Tiếp theo</font></font
+            ></span
+          >
+        </button>
+      </div>
+      <br />
+      
+ <div class="margin-10-0 bg-gray-2">
+        <div class="fs-17 fw-700 padding-0-20 color-gray inline-flex height-40 flex-hozi-center bg-black border-l-t">
+        Phim đề cử
+        </div>
+        </div>
+<!-- slide show -->
+      <div id="bodyContent" >
+        
+        <div class="sun">
+          <img onclick="movie1()" src="./image/dragon100.jpg" alt="" srcset="" />
+          <p>Dragon: Goku Trẻ Trâu</p>
+          <span>Movie</span>
+          
+          
+          
+
+      </div>
+        <div class="sun">
+            <img onclick="movie2()" src="./image/drogon1.jpg" alt="" srcset="" />
+            <p>Dragon Ball Super</p>
+            <span>131/131</span>
+            
+        </div>
+        <div class="sun">
+          <img onclick="movie3()" src="./image/dragon2.jpg" alt="" srcset="" />
+          <p>Dragon Ball Super Movie</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick="movie4()" src="./image/hvah.jpg" alt="" srcset="" />
+          <p>Học Viện Anh Hùng SS1</p>
+          <span>252/260</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick="movie5()" src="./image/hvah2.jpg" alt="" srcset="" />
+          <p>Học Viện Anh Hùng SS2</p>
+          <span>4/20</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick="movie6()" src="./image/3100.jpg" alt="" srcset="" />
+          <p>Dragon Quest</p>
+          <span>34/??</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick="movie7()" src="./image2/dragon98.jpg" alt="" srcset="" />
+          <p>Dragon Ball X</p>
+          <span>56/90</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick="movie8()" src="./image/hvahss5.jpg" alt="" srcset="" />
+          <p>Fuufu, Koibito....</p>
+          <span>12/87</span>
+          
+        </div>
+        <div onclick="movie9()" class="sun">
+          <img src="./image2/op2.webp" alt="" srcset="" />
+          <p>One Piece</p>
+          <span>77/98</span>
+          
+        </div>
+        <div onclick="movie10()" class="sun">
+          <img src="./image/monster.jpg" alt="" srcset="" />
+          <p>Công Ty Quái Vật</p>
+          <span>Movie</span>
+          
+        </div>
+        <div onclick="movie11()" class="sun">
+          <img src="./image/30000.jpg" alt="" srcset="" />
+          <p>One Piece</p>
+          <span>1036/??</span>
+          
+        </div>
+        <div  class="sun">
+          <img onclick ="movie12()" src="./image/1.jpg" alt="" srcset="" />
+          <p>Potket Monster 2019</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie13()" src="./image/dragon99.jpg" alt="" srcset="" />
+          <p>Dragon Ball Z</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie14()" src="./image/3.jpg" alt="" srcset="" />
+          <p>Yêu Thần Ký</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie15()" src="./image/4.jpg" alt="" srcset="" />
+          <p>Vạn Giới Thần Chủ</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie16()" src="./image/6.jpg" alt="" srcset="" />
+          <p>Thần Lan Kì Vô Vực</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie17()" src="./image/7.jpg" alt="" srcset="" />
+          <p>Vạn Giới Độc Tôn</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie18()" src="./image/8.jpg" alt="" srcset="" />
+          <p>Đấu La Đại Lục</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie19()" src="./image/9.jpg" alt="" srcset="" />
+          <p>Cool Doji DanShi</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie20()" src="./image/10.jpg" alt="" srcset="" />
+          <p>Uchi no Shishou</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie21()" src="./image/11.jpg" alt="" srcset="" />
+          <p>Cô Bé Cù Bắp</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie22()" src="./image/12.jpg" alt="" srcset="" />
+          <p>Dàn Harem Của Tôi</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie23()" src="./image/13.jpg" alt="" srcset="" />
+          <p>Người Ngoài Hành Tinh</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie24()" src="./image/14.jpg" alt="" srcset="" />
+          <p>Con Rồng Đẹp v:</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie25()" src="./image/15.jpg" alt="" srcset="" />
+          <p>Nhà Ba Đời Bán Kiếm</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie26()" src="./image/16.jpg" alt="" srcset="" />
+          <p>Khá Bảnh Comeback</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie27()" src="./image/17.jpg" alt="" srcset="" />
+          <p>Có Cờ Việt Nam Kìa</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie28()" src="./image/18.jpg" alt="" srcset="" />
+          <p>Dàn Harem Chất Lượng</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie29()" src="./image/20.jpg" alt="" srcset="" />
+          <p>Dàn Harem Fake</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie30()" src="./image/dra.jpg" alt="" srcset="" />
+          <p>Khánh Sạn Huyền Bí 2</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie31()" src="./image/sen.jpg" alt="" srcset="" />
+          <p>Turbo 2013</p>
+          <span>Movie</span>
+          
+        </div>
+        <div class="sun">
+          <img onclick ="movie32()" src="./image/na2.jpg" alt="" srcset="" />
+          <p>Naruto Mồ Côi</p>
+          <span>Movie</span>
+          
+      </div>
+      <div class="sun">
+        <img onclick ="movie33()" src="./image/na3.jpg" alt="" srcset="" />
+        <p>Naruto Mồ Côi</p>
+        <span>Movie</span>
+        
+    </div>
+    <div class="sun">
+      <img onclick ="movie34()" src="./image/na4.jpg" alt="" srcset="" />
+      <p>Naruto Mồ Côi</p>
+      <span>Movie</span>
+      
+  </div>
+  <div class="sun">
+    <img onclick ="movie35()" src="./image/na5.jpg" alt="" srcset="" />
+    <p>Naruto Mồ Côi</p>
+    <span>Movie</span>
+    
+</div>
+<div class="sun">
+  <img onclick ="movie36()" src="./image/na6.jpg" alt="" srcset="" />
+  <p>Naruto Mồ Côi</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie37()" src="./image/na7.jpg" alt="" srcset="" />
+  <p>Naruto Mồ Côi</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie38()" src="./image/na8.jpg" alt="" srcset="" />
+  <p>Naruto Mồ Côi</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie39()" src="./image/na9.jpg" alt="" srcset="" />
+  <p>Naruto Mồ Côi</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie40()" src="./image/na.jpg" alt="" srcset="" />
+  <p>Naruto Mồ Côi</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image/hvah3.jpg" alt="" srcset="" />
+  <p>Học Viện Anh Hùng ss3</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image/hvahss4.png" alt="" srcset="" />
+  <p>Học Viện Anh Hùng ss4</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image/hvahss5.jpg" alt="" srcset="" />
+  <p>Học Viện Anh Hùng ss5</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image2/op.webp" alt="" srcset="" />
+  <p>One Piece ss1</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image2/op1.jpg" alt="" srcset="" />
+  <p>One Piece ss2</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image2/op2.webp" alt="" srcset="" />
+  <p>One Piece ss3</p>
+  <span>Movie</span>
+  
+</div>
+
+<div class="sun">
+  <img onclick ="movie()" src="./image2/op5.jpg" alt="" srcset="" />
+  <p>One Piece ss4</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image/dragon99.jpg" alt="" srcset="" />
+  <p>Dragon Ball Z</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image2/dragon98.jpg" alt="" srcset="" />
+  <p>Dragon Ball Z</p>
+  <span>Movie</span>
+  
+</div>
+<div class="sun">
+  <img onclick ="movie()" src="./image2/dragon97.jpg" alt="" srcset="" />
+  <p>Dragon Ball Z</p>
+  <span>Movie</span>
+  
+</div>
+
+
+      </div>
+      <hr />
+      <br />
+      <hr />
+    </div>
+    <div>
+      <h1 id="page2" style="display:none ;color:red">ok</h1>
+    </div>
+
+      <div  id="footer" >
+        <div id="takeCare">
+          <h6>CHĂM SÓC KHÁNH HÀNG</h6>
+          <ul style="padding-left:0 ;">
+          <li><a href="">Trung tâm trợi giúp</li>
+          <li><a href="">Thanh toán</a></li>
+          <li><a href="">Tuyển nhân viên nữ</a></li>
+          <li><a href="">Chăm sóc khánh hàng</a></li>
+          <li><a href="">Chính sánh bảo mật</a></li>
+          
+
+        </ul></div>
+        <div id="aboutWed">
+          <h6>THÔNG TIN VÊ WED</h6>
+          <ul style="padding-left:0 ;">
+          <li><a href="">Công ty một thành viên</li>
+          <li><a href="">Founder: Lê Đức</a></li>
+          <li><a href="">CEO: Lê Đức</a></li>
+          <li><a href="">Manager: Lê Đức</a></li>
+          <li><a href="">Staff: Lê Đức</a></li>
+          </ul>
+        </div>
+        <div id="followUs">
+          <h6>THEO DÕ CHÚNG TÔI TRÊN</h6>
+          <ul>
+            <li><i style="color:#3f71e7 ;" class="fa-brands fa-square-facebook"></i> <a href=""> Lê Văn Đức</a> </li>
+            <li><i style="color:#dc6100" class="fa-brands fa-square-instagram"></i><a href=""> Lê Văn Đức</a></li>
+            <li><i class="fa-brands fa-linkedin"></i><a href=""> Lê Văn Đức</a></li>
+          </ul>
+        </div>
+        <div id="appMobile">
+          <h6>TẢI APP ANIMEHAY NGAY THÔI</h6>
+          <img src="./image/qr.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    
+    
+    
+  </body>
+  
+  <script src="./mainwed.js"></script>
+</html>
