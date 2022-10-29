@@ -17,11 +17,11 @@
             border-radius: 10px;
             box-sizing: border-box;
     width: 500px;
-    height: 500px;
+    height: 550px;
     background-color:rgba(255,255,255, 0.5);
     text-align: center;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 20px;
     padding-top: 15px;
     position: relative;
         }
@@ -36,17 +36,15 @@
 }
         .father i{
             position: absolute;
-            left: 375px;
-    margin-top: 11px;
+           
     
         }
         input{
-          
+          position: relative;
             width: 300px;
             height: 35px;
             border-radius: 30px;
-            
-            margin-bottom: 20px;
+            margin-bottom: px;
             border-style:none ;
             user-select: none;
         }
@@ -62,6 +60,7 @@
         }
         h4{
             display: inline;
+          
         }
         label{
             position: relative;
@@ -145,6 +144,11 @@
             background-color: white;
        
         }
+        #checkPass{
+            top:-10px
+
+        }
+        
        
        
     
@@ -154,23 +158,32 @@
 </head>
 <body>
    
+   
     <div>
-        <div class="father">
+        <div class="father"> <div class="logo">
+        <a href="wed.html">
+          <img
+            style="width: 200px; padding: 10px 10px"
+            src="https://animehay.club/themes/img/logo.png"
+            alt="logo animehay"
+          />
+        </a>
+      </div>
             <h2>Đăng Nhập</h2>
             <div class="input">
-                <i style="opacity: 0.4;" class="fa-solid fa-envelope"></i>
+                <i style="opacity: 0.4;z-index: 10;top:153px;left: 370px;" class="fa-solid fa-envelope"></i>
                 <input style="margin-bottom:5px ;box-sizing: border-box;padding-left: 15px;" id="checkEmail" type="text" placeholder="Email..."><br>
-                <div style="display:in ;">
+                <div style="display:inline ;">
                 <span style="display: none;" id="erorEmail"><em><h4>*email không chính xác*</h4></em></span><br>
                 <span style="display: none;" id="erorEmail1"><em><h4>*email chưa được đăng ký*</h4></em></span><br>
                 </div>
                 <input style="box-sizing: border-box;padding-left: 15px;" id="checkPass" type="password" placeholder="Mật khẩu...">
-                <i style="opacity: 0.4;cursor: pointer;" id="icon" onclick="showPassword()" class="fa-solid fa-eye"></i>
-                <span id="confirnPass"  style="display: none;" ><em><h4>*mật khẩu không chính xác*</h4></em></span>
+                <i style="opacity: 0.4;cursor: pointer;left: 370px;" id="icon" onclick="showPassword()" class="fa-solid fa-eye"></i>
+                <span id="confirnPass"  style="display: none;" ><em><h4>*mật khẩu không chính xác*</h4></em></span><br>
                 <div style="display:flex ;">
-                    <input style="width: 18px;position: relative ;left: 100px;top: -15px;  " type="checkbox"><label  for="">Lưu tài khoản</label>
+                    <input style="width: 18px;position: relative ;left: 100px;top: -15px;  " checked type="checkbox"><label  for="">Lưu tài khoản</label>
                 </div>
-                <a id="forgot" href="https://account.garena.com/recovery#/">quên mật khẩu !</a>
+                <div style="margin-top:15px ;"><a id="forgot" href="https://account.garena.com/recovery#/">quên mật khẩu !</a></div>
             </div>
             <div id="btnsuccess">
                 <button id="success" onclick="register()" style=" width : 100px;height: 40px;border-radius: 30px;margin-top: 40px;cursor: pointer;"><h3 style="margin:0 auto ;">Đăng nhập</h3></button><br>

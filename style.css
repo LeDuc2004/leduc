@@ -10,13 +10,15 @@ body{
 }
 h4{
     color: red;
+    position: relative;
+    top: -10px;
 }
 
 
 
 h2{
     display: inline-block;
-    padding: 50px;
+    padding-bottom: 20px;
     
    
     
@@ -55,7 +57,7 @@ button:hover{
    position: relative;
    border-radius: 10px;
     width: 500px;
-    height: 600px;
+    height:500px;
     background-color: rgba(255,255,255, 0.5);
     text-align: center;
     margin: 0 auto;

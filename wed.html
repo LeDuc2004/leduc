@@ -30,17 +30,17 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <div id="ifDontLogin" style="display:none ;" >
-      <h1 >BẠN CHƯA ĐĂNG NHẬP !!!</h1>
-  </div>
+   
   <script src="./hotro.js"></script>
   
-  <body style="background-color: #2d2d2d; height: 100%px">
+  <body style="background-color:black; height: 100%px"> 
+    <div id="ifDontLogin" style="display:none;color: lightblue;" >
+      <h1 style="color: red;background-color: lightblue;" >BẠN CHƯA ĐĂNG NHẬP !!!</h1>
+  </div>
     <script>
       
     </script>
-    <span id="comeHead" onclick="comeHead()"><i onclick="comeHead()" class="fa-solid fa-circle-up"></i></span>
-    <span id="comeHead1" onclick="comeHead()"><i onclick="comeHead()" class="fa-solid fa-circle-up"></i></span>
+    
     <div id="divMid">
       <div id="header">
         <div class="logo">
@@ -62,8 +62,10 @@
             color: white;
             border: 1px solid #404040;
             outline: none;
-            box-sizing: border-box;
+            
             padding-left: 20px;
+            padding-top: 17px;
+            padding-bottom: 17px;
           "
           type="text"
           placeholder="Nhập từ khóa... "
@@ -103,14 +105,6 @@
             data-bs-placement="bottom"
             data-bs-title="Phim yêu thích"
             ><span onclick="phimyeuthich()" style="display: inline-block;"><i onclick="phimyeuthich()" class="fa-regular fa-bookmark"></i></span
-          ></a>
-          <a
-            style="text-decoration: none"
-            href="#"
-            data-bs-toggle="tooltip"
-            data-bs-placement="bottom"
-            data-bs-title="Đăng nhập"
-            ><span style="display: inline-block;" onclick="login()" ><i onclick="login()" class="fa-solid fa-arrow-right-to-bracket" ></i></span
           ></a>
           <a id="nameUser"
             style="text-decoration: none"

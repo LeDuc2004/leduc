@@ -1,3 +1,4 @@
+let a = performance.now()
 function showPassword() {
   let password = document.getElementById("mk");
   let icon = document.getElementById("icon");
@@ -51,6 +52,7 @@ function register() {
   let mail = document.getElementById("email").value;
   let pass = document.getElementById("mk").value;
   let passConfirm = document.getElementById("remk").value;
+  
 
   // if (checkUserName(username) == false) {
   //   errorUserName.setAttribute("style", "display:block; color:blue");
@@ -83,8 +85,17 @@ function register() {
       pConfirm.setAttribute("style", "display:none");
     }
   }
+  if(passConfirm=="" && pass ==""){
+    document.getElementById("spanremk").setAttribute("style","display:none")
 
-  if (
+  }
+  if(username == ""){
+    document.getElementById("spantk").setAttribute("style","display:block")
+  }else{
+    document.getElementById("spantk").setAttribute("style","display:none")
+  }
+
+  if ( username !=="" &&
     // checkUserName(username) == true &&
     checkMail(mail) == true &&
     (pass.length >= 6 || pass.indexOf(" ") == -1) &&
@@ -98,7 +109,7 @@ function register() {
     };
     let getInformation = localStorage.getItem("information");
     console.log(obj);
-    if (getInformation == null) {
+    if (getInformation == null && pass!=="") {
       information.push(obj); // if = [username:username;]
       localStorage.setItem("information", JSON.stringify(information));
       window.location.href = "login.html";
@@ -118,7 +129,8 @@ function register() {
           flag = true;
         }
       }
-      if (flag == true) {
+      if (flag == true && pass !=="") {
+       
         emailExits.setAttribute("style", "display:none");
         getInformation.push(obj); // {[username....;email....;password....,]}
         localStorage.setItem("information", JSON.stringify(getInformation));
@@ -136,3 +148,6 @@ function register() {
 function register2() {
   window.location.href = "login.html";
 }
+let b = performance.now()
+console.log(b-a)
+

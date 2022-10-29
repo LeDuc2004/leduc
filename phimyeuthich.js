@@ -54,6 +54,7 @@ function clickdelete1(){
             let i =[]
             danhsachPhim.splice(i,1)
             i.push(danhsachPhim)
+            JSON.stringify(i)
             localStorage.setItem("userChoice",i)
             location.reload()
         }
@@ -61,3 +62,6 @@ function clickdelete1(){
 
     
 }
+
+
+

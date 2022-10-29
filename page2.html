@@ -133,6 +133,10 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+#watch span :hover{
+  cursor: pointer;
+        box-shadow: 4px 2px greenyellow;
+}
     </style>
   </head>
   <div id="ifDontLogin" style="display:none ;" >
@@ -343,7 +347,7 @@ function page2() {
     if (getInformation == null) {
       information.push(obj); // if = [username:username;]
       localStorage.setItem("userChoice", JSON.stringify(information));
-     
+     alert("Đã thêm vào danh sánh phim yêu thích")
     } else {
       let getInformation = localStorage.getItem("userChoice");
       getInformation = JSON.parse(getInformation);
@@ -365,6 +369,7 @@ function page2() {
        } console.log(flag); if(flag==true){
           getInformation.push(obj); // {[username....;email....;password....,]}
         localStorage.setItem("userChoice", JSON.stringify(getInformation));
+        alert("Đã thêm vào danh sánh phim yêu thích")
         }
   }
 }

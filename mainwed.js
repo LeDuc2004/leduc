@@ -1,3 +1,4 @@
+let f = performance.now()
 function login() {
   window.location.href = "login.html";
 }
@@ -68,9 +69,7 @@ function theLoai1(){
 
 
 
-function comeHead(){
-  window.location.href = "wed.html";
-}
+
 
 function dragon() {
   
@@ -175,7 +174,8 @@ function dragon() {
           
         
         }
-    
+    let b= performance.now()
+    console.log(b-f)
   
 
 
@@ -844,7 +844,8 @@ console.log(checkShow.getAttribute("data-bs-original-title"));
 
   }
 }
-
+let w =performance.now()
+console.log(w-f);
 
 
 

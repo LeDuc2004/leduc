@@ -2,6 +2,8 @@
 function showPassword(){
    
     let checkPass = document.getElementById("checkPass")
+   
+
     let icon =document.getElementById("icon")
     if(checkPass.type == "password"){
         checkPass.type="text";
@@ -14,11 +16,14 @@ function showPassword(){
     }
 }
 
-function register(){ 
+function register(){  
+    let valueCheckPass = document.getElementById("checkPass").value;
     let emailLocal = localStorage.getItem("information");
     let num = false
     let checkEmail = document.getElementById("checkEmail").value ;
     let spanemail = document.getElementById("erorEmail")
+    let spanmk = document.getElementById("confirnPass")
+    
     let re =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     let flag = false
     console.log(emailLocal);
@@ -35,13 +40,13 @@ function register(){
         // let xx = document.getElementById("erorEmail")
     // xx.setAttribute("style","display:none")
     }   let checkPass = document.getElementById("checkPass"). value;
-    let spanmk = document.getElementById("confirnPass")
+    
     if(checkPass==""){ 
         spanmk.setAttribute("style","display:block;color:red")
 
     }else{
         spanmk.setAttribute("style","display:none;")
-        // window.location.href="wed.html"
+        
     }
     
     if(flag=true){
@@ -72,15 +77,32 @@ function register(){
            
     }
      console.log(num);
+     let ok = num
     let kxd = document.getElementById("erorEmail1");
-   if(num==false && checkPass !==""){
-    console.log(1);
+   if(num==false && checkEmail !=="" ){
+    console.log(99);
     spanemail.setAttribute("style","display:none");
     kxd.setAttribute("style","display:block;color:red");
    }
+   if(num !==false && checkEmail !=="" ){
+    console.log(99);
+    spanemail.setAttribute("style","display:none");
+    kxd.setAttribute("style","display:none;color:red");
+   }
+   if(num !==false && checkEmail !=="" && changeArray[num].password !== obj1.pass){
+    document.getElementById("confirnPass").setAttribute("style","display:block;color:red")
+    document.getElementById("checkPass").value = ""
+   }
+   if(num=false && checkEmail !=="" && valueCheckPass !== ""){
+    document.getElementById("confirnPass").setAttribute("style","display:block;color:red")
+    document.getElementById("checkPass").value = ""
+
+   }
     console.log(emailLocal);
     
-     if(changeArray[num].password == obj1.pass ){
+
+     if(changeArray[ok].password == obj1.pass){
+        console.log(100);
         kxd.setAttribute("style","display:none");
          window.location.href="wed.html"
     }else{
